@@ -1,0 +1,16 @@
+name: multiple shell Exercise2
+on: [push]
+
+jobs:
+  file-directory-exploration:
+    runs-on: windows-latest
+    steps:
+      - name: /home/runner 디렉토리에 test_folder 생성
+        run: mkdir /home/runner/test_folder
+
+      - name: test_folder 안에 sample.txt 파일 생성
+        run: echo "This is a sample file" > /home/runner/test_folder/sample.txt
+
+      - name: test_folder로 디렉토리 이동 후 파일 내용 확인
+        working-directory: /home/runner/test_folder
+        run: cat sample.txt
