@@ -9,12 +9,15 @@ jobs:
         run: uname -a
       - name: pwsh에서 시스템 정보 보기
         shell: pwsh
-        run: Get -ComputerInfo
+        run: |
+          Get-ComputerInfo
+          # $PSVersionTable
+          # Get-Host | Select-Object Version
       - name: python에서 버전 확인
         shell: python
         run: |
           import sys
           print(sys.version)
       - name: node에서 버전 확인
-        shell: node
-        run: node -v
+        shell: node {0}
+        run: console.log(process.version)
