@@ -11,13 +11,7 @@ jobs:
   shell-cmd-job:
     runs-on: ubuntu-latest
     steps:
-      - name: echo Hello
-        run: echo "Hello World"
-      - name: multiple line cmd
-        run: |
-          node -v
-          npm -v
-      - name: check Python and pip versions
-        run: |
-          python --version
-          pip --version
+      - name: 1. Check Python Version
+        run: python --version
+      - name: Check pip Version
+        run: pip --version
