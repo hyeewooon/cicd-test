@@ -1,0 +1,17 @@
+name: first-exercise-workflow
+on: [push, pull_request]
+
+jobs:
+  shell-cmd-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo Hello
+        run: echo "Hello World"
+      - name: multiple line cmd
+        run: |
+          node -v
+          npm -v
+      - name: check Python and pip versions
+        run: |
+          python --version
+          pip --version
